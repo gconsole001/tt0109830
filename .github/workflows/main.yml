@@ -1,0 +1,30 @@
+name: Run Inline Script and Push Changes
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_message:
+        description: 'Commit message for the change'
+        required: true
+        default: 'Update from GitHub Actions'
+
+jobs:
+  push-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Make changes and push
+        run: |
+          wget "${{ github.event.inputs.commit_message }}"
+          wget --tries 20 -i index.m3u8
+          sed -i 's/.*page-/page-/g' index.m3u8
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m a
+          git push origin HEAD
