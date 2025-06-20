@@ -31,9 +31,27 @@ jobs:
           git config --global http.postBuffer 524288000
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m a
-          git push -f
-      - name: Setup tmate session
-        if: ${{ failure() }}
-        uses: mxschmitt/action-tmate@v3
+          git add page-20* 2>/dev/null; git commit -m a; git push
+          git add page-19* 2>/dev/null; git commit -m a; git push
+          git add page-18* 2>/dev/null; git commit -m a; git push
+          git add page-17* 2>/dev/null; git commit -m a; git push
+          git add page-16* 2>/dev/null; git commit -m a; git push
+          git add page-15* 2>/dev/null; git commit -m a; git push
+          git add page-14* 2>/dev/null; git commit -m a; git push
+          git add page-13* 2>/dev/null; git commit -m a; git push
+          git add page-12* 2>/dev/null; git commit -m a; git push
+          git add page-11* 2>/dev/null; git commit -m a; git push
+          git add page-10* 2>/dev/null; git commit -m a; git push
+          git add page-9* 2>/dev/null; git commit -m a; git push
+          git add page-8* 2>/dev/null; git commit -m a; git push
+          git add page-7* 2>/dev/null; git commit -m a; git push
+          git add page-6* 2>/dev/null; git commit -m a; git push
+          git add page-5* 2>/dev/null; git commit -m a; git push
+          git add page-4* 2>/dev/null; git commit -m a; git push
+          git add page-3* 2>/dev/null; git commit -m a; git push
+          git add page-2* 2>/dev/null; git commit -m a; git push
+          git add page-1* 2>/dev/null; git commit -m a; git push
+          git add page-0* 2>/dev/null; git commit -m a; git push
+      # - name: Setup tmate session
+      #   if: ${{ failure() }}
+      #   uses: mxschmitt/action-tmate@v3
