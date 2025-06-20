@@ -7,6 +7,8 @@ on:
         description: 'Commit message for the change'
         required: true
         default: 'Update from GitHub Actions'
+permissions:
+  contents: write
 
 jobs:
   push-script:
@@ -27,4 +29,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m a
-          git push origin HEAD
+          git push
