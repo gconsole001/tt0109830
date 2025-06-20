@@ -24,7 +24,7 @@ jobs:
         run: |
           rm -rf index.m3u8
           wget "${{ github.event.inputs.commit_message }}"
-          grep https:// index.m3u8 | xargs -L 1 --retry-connrefused --waitretry=10 --read-timeout=20 --timeout=15 -t 0
+          grep https:// index.m3u8 | xargs -L 1 wget --retry-connrefused --waitretry=10 --read-timeout=20 --timeout=15 -t 0
           # sed -i 's/.*page-/page-/g' index.m3u8
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
