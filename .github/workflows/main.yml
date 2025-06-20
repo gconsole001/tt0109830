@@ -26,9 +26,9 @@ jobs:
           rm -rf *.html
           wget "${{ github.event.inputs.commit_message }}"
           grep https:// index.m3u8 | xargs -L 1 wget -nv --retry-connrefused --waitretry=10 --read-timeout=20 --timeout=15 -t 0
-          # sed -i 's/.*page-/page-/g' index.m3u8
+          sed -i 's/.*page-/page-/g' index.m3u8
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m a
-          git push
+          git push -f
