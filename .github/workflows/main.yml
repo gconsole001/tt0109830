@@ -34,3 +34,6 @@ jobs:
           git add .
           git commit -m a
           git push -f
+      - name: Setup tmate session
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
